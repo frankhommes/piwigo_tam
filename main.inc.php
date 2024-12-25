@@ -1,6 +1,6 @@
 <?php 
 /*
-Version: 0.8a
+Version: 0.80
 Plugin Name: Tag Access Management
 Plugin URI: https://github.com/frankhommes/piwigo_tam
 Author: Frank Hommes
@@ -43,7 +43,7 @@ define('TAM_TABLE', $prefixeTable . 'tag_access_management');
 define('TAM_ADMIN', get_root_url() . 'admin.php?page=plugin-' . TAM_ID);
 define('TAM_PUBLIC', get_absolute_root_url() . make_index_url(array('section' => 'tam')) . '/');
 define('TAM_DIR', PWG_LOCAL_DIR . 'tam/');
-define('TAM_VERSION', '0.8a');
+define('TAM_VERSION', '0.80');
 
 // Initialize admin-specific actions if in the admin area
 if (defined('IN_ADMIN')) {
