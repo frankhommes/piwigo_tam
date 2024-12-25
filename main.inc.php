@@ -114,3 +114,7 @@ function tam_uninstall() {
     $query = "DROP TABLE IF EXISTS " . TAM_TABLE;
     pwg_query($query);
 }
+
+function tam_check_action($action) {
+return($action);
+}
