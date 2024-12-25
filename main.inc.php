@@ -119,16 +119,6 @@ function tam_check_action($action) {
 return($action);
 }
 
-function tam_aplying_changes() {
-//reading all users from table tag_access_management_users to $tam_tamsers
-global $prefixeTable;
-  $query = sprintf('SELECT * FROM ' . TAM_TABLE . '_users ;');
-  $result = pwg_query($query);
-  $tam_tamsers = array(); 
-    while ($row = pwg_db_fetch_assoc($result)) {
-    $tam_tamsers[] = $row;
-    
-  }
   
 
 function tam_aplying_changes() {
