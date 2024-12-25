@@ -206,6 +206,9 @@ $template->assign('tam_path', TAM_PATH);
     }
     
     }
+    if (!isset($tam_piwigo_user_info["associated_tag"])) {
+    $tam_piwigo_user_info["associated_tag"] = '';
+}
     
     }}
     

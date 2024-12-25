@@ -76,7 +76,9 @@
 <tr><td></td></tr>
 <tr><td><strong>Adding a new tag to this user:</strong></td></tr>
 <form action="" method="post" name="form"><tr><td><select size="10" id ="select" multiple name="tag_id"> <option value="none" selected>none</option> {foreach from=$tam_tags item=tag} <option value="{$tag.id}"
->{$tag.name}</option>{/foreach} </select></td>
+>{$tag.name}</option>{/foreach}
+
+</select></td>
 <td align="center" width="50">
 <input type="hidden" name="tam_post_piwigo_user_id" value="{$tam_post_piwigo_user_id}">
 <input type="hidden" name="action" value="add">
@@ -101,10 +103,10 @@
   
   {foreach from=$tam_users item=user}<form action="" method="post" name="form"><input type="hidden" name="tam_post_id" value="{$user.tam_id}"><input type="hidden" name="tam_post_piwigo_user_id" value="{$user.id}"><tr><td align="left" >{$user.username}</td>
   
-  {if ($user.associated_tag)}
+   {if isset($user.associated_tag) && $user.associated_tag != ''}
   <td align="left" width="100">{$user.associated_tag}</td>
   {else}
-  <td align="left" width="100">No tag yet</td>
+  <td align="left" width="100"> No associated tag</td>
   {/if}
 
   
