@@ -5,8 +5,6 @@
   {if $tam_action eq "edit"}
   <span style="color:red">Modus: edit</span><br />
   <!-- editing -->
-  
-   
      
   <script src="{$tam_path}jquery.min.js"></script>
   {literal}
@@ -85,7 +83,6 @@
 <input class="submit" type="submit" name="submit" value="add"/></form></td> </tr>
 <tr><td>Filter: <input id="textbox" type="text" /></td></tr>
 
-
   {/if}
   {/foreach}
   </table>
@@ -101,14 +98,23 @@
   <table> 
   <tr><td width="200"><strong>Username</strong></td><td width="200"><strong>Linked Tag</strong></td><td width="50"><strong>Modify</strong></td></tr>
   
-  {foreach from=$tam_users item=user}<form action="" method="post" name="form"><input type="hidden" name="tam_post_id" value="{$user.tam_id}"><input type="hidden" name="tam_post_piwigo_user_id" value="{$user.id}"><tr><td align="left" >{$user.username}</td>
-  
-   {if isset($user.associated_tag) && $user.associated_tag != ''}
-  <td align="left" width="100">{$user.associated_tag}</td>
-  {else}
-  <td align="left" width="100"> No associated tag</td>
-  {/if}
+ {foreach from=$tam_users item=user}
+  <form action="" method="post" name="form">
 
+  {if isset($user.associated_tag) && $user.associated_tag != ''}
+  <input type="hidden" name="tam_post_id" value="{$user.tam_id}">
+  {/if}
+  <input type="hidden" name="tam_post_piwigo_user_id" value="{$user.id}">
+
+  <tr>
+    <td align="left">{$user.username}</td>
+    
+    
+    {if isset($user.associated_tag) && $user.associated_tag != ''}
+    <td align="left" width="100">{$user.associated_tag}</td>
+    {else}
+    <td align="left" width="100">No associated tag</td>
+    {/if}
   
   <td align="center" width="50"><input type="hidden" name="action" value="edit"><input class="submit" type="submit" name="submit" value="edit"/></td>
 
