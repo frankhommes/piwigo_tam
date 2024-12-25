@@ -49,7 +49,7 @@ if (defined('IN_ADMIN')) {
     add_event_handler('get_admin_plugin_menu_links', 'tam_admin_menu_links');
     
     // Include the file for all predefined admin events
-    require_once(TAM_PATH . 'admin_events.inc.php');
+    require_once(TAM_PATH . 'include/admin_events.inc.php');
     
     // Initialize admin-specific settings
     add_event_handler('init', 'tam_admin_init');
@@ -93,16 +93,6 @@ function tam_check_access($tag_id, $user_group_id) {
     
     // Return the access level if found, otherwise return null
     return isset($result['access_level']) ? $result['access_level'] : null;
-}
-
-// Admin menu setup for the plugin
-function tam_admin_menu_links($menu) {
-    $menu[] = array(
-        'name' => 'Tag Access Management',
-        'url' => TAM_ADMIN,
-        'active' => (strpos($_SERVER['REQUEST_URI'], 'plugin-' . TAM_ID) !== false)
-    );
-    return $menu;
 }
 
 // Admin initialization settings
