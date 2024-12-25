@@ -7,7 +7,8 @@ Author: Frank Hommes
 Author URI: http://www.freanki.net/
 Description: Plugin for advanced access management via tags.
 
-This plugin allows administrators to manage access to specific categories based on tags. 
+This plugin grants access to albums based on tags. If a tag appears at least once in an album, 
+the user associated with that tag is granted access to the album.
 It scans images associated with specific tags and automatically grants users access 
 to the corresponding categories.
 
@@ -24,6 +25,7 @@ Requirements:
 Notes:
 - Ensure that tag assignments are accurate before applying changes.
 - This plugin has been tested for compatibility with the latest versions of Piwigo.
+- The Plugin has to be run after adding new pictures
 */
 
 // Check whether we are indeed included by Piwigo.
@@ -41,7 +43,7 @@ define('TAM_TABLE', $prefixeTable . 'tag_access_management');
 define('TAM_ADMIN', get_root_url() . 'admin.php?page=plugin-' . TAM_ID);
 define('TAM_PUBLIC', get_absolute_root_url() . make_index_url(array('section' => 'tam')) . '/');
 define('TAM_DIR', PWG_LOCAL_DIR . 'tam/');
-define('TAM_VERSION', '0.7');
+define('TAM_VERSION', '0.8a');
 
 // Initialize admin-specific actions if in the admin area
 if (defined('IN_ADMIN')) {
